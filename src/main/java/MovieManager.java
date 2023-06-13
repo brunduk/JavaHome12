@@ -35,7 +35,7 @@ public class MovieManager {
             movieLength = limit;
         }
         MovieData[] reversed = new MovieData[movieLength];
-        for (int i = 0; i < limit; i++) {
+        for (int i = 0; i < movieLength; i++) {
             reversed[i] = film[movies.length - 1 - i];
         }
         return reversed;

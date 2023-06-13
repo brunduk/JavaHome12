@@ -30,7 +30,7 @@ public class MovieManagerTest {
     }
 
     @Test
-    public void reversedList() {
+    public void reversedListMax() {
         MovieManager mana = new MovieManager(5);
         mana.addMovie(movie1);
         mana.addMovie(movie2);
@@ -56,5 +56,39 @@ public class MovieManagerTest {
         MovieData[] actual = mana.findAll();
 
         Assertions.assertArrayEquals(expected, actual);
+    }
+
+    @Test
+    public void reversedListMin() {
+        MovieManager mana = new MovieManager(5);
+        mana.addMovie(movie1);
+        mana.addMovie(movie2);
+        mana.addMovie(movie3);
+        mana.addMovie(movie4);
+
+
+        MovieData[] expected = {movie4, movie3, movie2, movie1};
+        MovieData[] actual = mana.findLast();
+
+        Assertions.assertArrayEquals(expected, actual);
+
+    }
+
+    @Test
+    public void reversedList() {
+        MovieManager mana = new MovieManager(7);
+        mana.addMovie(movie1);
+        mana.addMovie(movie2);
+        mana.addMovie(movie3);
+        mana.addMovie(movie4);
+        mana.addMovie(movie5);
+        mana.addMovie(movie6);
+        mana.addMovie(movie7);
+
+        MovieData[] expected = {movie7, movie6, movie5, movie4, movie3, movie2, movie1};
+        MovieData[] actual = mana.findLast();
+
+        Assertions.assertArrayEquals(expected, actual);
+
     }
 }
